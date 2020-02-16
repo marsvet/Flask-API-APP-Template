@@ -1,0 +1,4 @@
+# git commit 时会被忽略的文件列表
+__pycache__
+.vscode
+.idea
