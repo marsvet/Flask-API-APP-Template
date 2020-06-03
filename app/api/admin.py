@@ -4,7 +4,7 @@
 #
 from flask import request, jsonify
 from app.api import api
-from app.common import mySum
+from app.utils import mySum
 
 
 @api.route("/sum")
