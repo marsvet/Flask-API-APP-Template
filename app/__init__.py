@@ -4,7 +4,7 @@ from pymysql import connect
 from flask_mail import Mail
 
 config = Config()
-db = connect(**config.pymysql_config)   # 连接数据库
+db = connect(**config.pymysql_config)
 mail = Mail()
 
 

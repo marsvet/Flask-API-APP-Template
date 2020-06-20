@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
-#
-# 邮件相关代码全部放到这里
-#
+'''
+邮件相关代码
+'''
 from threading import Thread
 from flask import current_app, render_template
 from flask_mail import Message

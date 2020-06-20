@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
-#
-# 管理员相关路由
-#
+'''
+管理员相关路由
+'''
 from flask import request, jsonify
 from app.api import api
 from app.utils import mySum

@@ -1,19 +1,16 @@
 # -*-coding:utf-8-*-
-#
-# 操作数据库的代码全部放到这里
-# 其他文件要操作数据库时，先从该文件导入某个类，实例化后调用成员函数
-#
+'''
+数据库操作相关代码
+'''
 from app import db
 
 
-# 操作用户表的类
-class User:  # 创建一个类，类中每个方法的第一个参数必须是 self（相当于 this 指针，代表当前类）
-    def __init__(self):  # 相当于构造函数
-        db.ping(reconnect=True)
+class User:
+    def __init__(self):
+        db.ping(reconnect=True) # 如果数据库断开连接，自动重连
         self.cursor = db.cursor()
-        # 每次创建 User 对象时创建 cursor。在成员函数中，用 self.xxx = xxx 的方式创建的是成员变量，直接 xxx = xxx 的方式创建的是局部变量
 
-    def __del__(self):  # 相当于析构函数
+    def __del__(self):
         self.cursor.close()  # 对象销毁时关闭 cursor
 
     def getUserInfo(self, user_name):
